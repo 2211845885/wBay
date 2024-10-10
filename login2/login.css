@@ -38,6 +38,16 @@ body {
     font-size: 16px;
     cursor: pointer;
 }
+.right-panel button {
+      color: #23C39E;
+      background: transparent;
+    border: 2px solid #23C39E;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
 .right-panel {
     background-color: white;
     text-align: center;
@@ -81,6 +91,7 @@ body {
     border-radius: 25px;
     font-size: 16px;
     padding-left: 45px;
+    
 }
 .input-group img {
     position: absolute;
@@ -89,4 +100,32 @@ body {
     transform: translateY(-50%);
     width: 24px;
     height: 24px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    padding-left: 45px;
+    
+}
+
+.input-group input:focus {
+    outline: 0;
+}
+
+.input-group.success input {
+    border-color: #09c372;
+}
+
+.input-group.error input {
+    border-color: #ff3860;
+}
+
+.input-group .error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
 }
