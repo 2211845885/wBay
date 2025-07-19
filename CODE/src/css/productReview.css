@@ -1,0 +1,180 @@
+.review-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.review-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.image-container {
+    background-color: #f8f9fa;
+    margin-top: 1rem 0;
+    padding: 2rem;
+    border-right: 1px solid #eee;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rating-box {
+    margin-right: 2rem;
+    margin-top: 1.5rem;
+}
+
+#rating {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    width: 2rem;
+    margin: auto;
+    text-align: center;
+}
+
+.btn {
+    margin-top: auto;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    margin-right: 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease; /*transition when the button is hoverd over*/
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.linkBtn {
+    text-decoration: none;
+}
+
+.deletebtn {
+    margin-top: auto;
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    margin-right: 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease; /*transition when the button is hoverd over*/
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/*when the button is hoverd over it slightly goes up*/
+.btn:hover {
+    background: #1a8870;
+    transform: translateY(-2px);
+}
+
+.deletebtn:hover {
+    background: #c24032;
+    transform: translateY(-2px);
+}
+
+/*styling for the tiny icon for both the cart in the customer page and the wrench in the vendor page*/
+.btn i {
+    font-size: 1.1rem;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quantity-btn {
+    background-color: #f8f9fa;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0.3rem;
+}
+
+.remove-item {
+    color: var(--danger-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.add-disabled{
+    margin-top: auto;
+    background: #666;
+    color: white;
+    border: none;
+    padding: 1rem;
+    margin-right: 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: default;
+    transition: all 0.3s ease; /*transition when the button is hoverd over*/
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

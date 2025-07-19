@@ -1,0 +1,170 @@
+/* Container for the add product form */
+.addProduct-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the form layout */
+.addProduct-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* General form group styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Grid layout for rows of input fields */
+.form-row {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* Style for labels */
+label {
+    font-weight: 550;
+}
+
+/* Inputs, textareas, and select fields */
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    background-color: white;
+    border: 1px groove;
+    border-color: black;
+    padding: 12px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Focus styles for inputs */
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(35, 195, 158, 0.1);
+}
+
+/* Focus styles for textarea */
+textarea:focus {
+    outline: none; 
+    border-color: var(--primary-color);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(35, 195, 158, 0.1);
+}
+
+/* Focus styles for select dropdown */
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(35, 195, 158, 0.1);
+}
+
+/* Actions (buttons) styling */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Submit button styling */
+.submit-button {
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    float: right;
+}
+
+/* Delete button styling */
+.delete-button {
+    padding: 1rem;
+    position: relative;
+    bottom: 54px;
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    float: left; 
+}
+
+/* Hover effect for delete button */
+.delete-button:hover {
+    background-color: #af0404;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for submit button */
+.submit-button:hover {
+    background-color: #1a9277;
+    transform: translateY(-2px); 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Container for image upload */
+.imageUpload-container {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Preview image styling */
+#imagePreview {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 1rem; 
+}
+
+/* Upload button styling */
+.upload-button {
+    padding: 1rem; 
+    display: inline-block;
+    background: var(--primary-color); 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 1rem; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for upload button */
+.upload-button:hover {
+    background-color: #1a9277;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide the file input field */
+#productImage {
+    display: none;
+}

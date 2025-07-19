@@ -1,0 +1,206 @@
+.navbar {
+    background: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+.nav-links a {
+    color: var(--dark-color); /*variable can be found in the globalStyle file specfilly root*/
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease; /*???*/
+    position: relative;
+}
+
+/*creates the line under the home and product link*/
+.nav-links a::after,.nav-links button::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color); /*variable can be found in the globalStyle file specfilly root*/
+    transition: width 0.3s ease; /*smoothens the transiton when hovering over it, code for transition below*/
+}
+
+/*creates the line below all links in the navbar*/
+.nav-links a:hover::after,.nav-links button:hover::after {
+    width: 100%;
+}
+
+/* Cart Icon*/
+.cart-icon {
+    position: relative;
+    margin: 0 1rem;
+}
+
+.cart-icon a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--dark-color); /*variable can be found in the globalStyle file specfilly root*/
+    text-decoration: none;
+    transition: color 0.3s ease; /*???*/
+}
+
+.cart-icon i {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.cart-icon a:hover i {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Counter Badge */
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: var(--primary-color);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/*the section ends here*/
+
+.nav-brand a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-brand {
+    flex-shrink: 0;
+}
+
+/* User Menu */
+.user-menu {
+    position: relative;
+}
+
+/*changes the button to an icon only */
+.user-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    transition: color 0.3s;
+}
+
+/*when u hover over it the color changes*/
+.user-btn:hover {
+    color: var(--primary-color);
+}
+
+/*styling for the drop down menu which is initially hidden
+when someone clicks on it a js script runs that add the show
+class to it which in turn displays it in block type*/
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 0.5rem 0;
+    min-width: 150px;
+    display: none;
+    z-index: 1000;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+/*specfic styling for the a 2 links that are inside the drop down menu
+the previous styling above still applies (the line underneath it)*/
+.dropdown-menu * {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu>form {
+    padding: 0;
+}
+
+.dropdown-menu *:hover,
+.dropdown-menu *.active {
+    background-color: #f8f9fa;
+    color: var(--primary-color);
+}
+
+.navbar-btn {
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    border: none;
+    background: none;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0.8rem 1rem;
+    width: 100%;
+    text-align: start;
+    cursor: pointer;
+    font-size: medium;
+
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .search-bar {
+        margin: 0 1rem;
+    }
+
+    .add-product-nav-btn {
+        width: 100%;
+        justify-content: center;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Hide counter when empty */
+
+
+/*this just straight up doesn't work idk why*/
+.cart-count:empty,
+.cart-count[data-count="0"] {
+    display: none;
+}

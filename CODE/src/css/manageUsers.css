@@ -1,0 +1,76 @@
+/* Header Styling for main content */
+h1{
+    margin-bottom: 1rem;
+}
+
+/* Manage Users Section Styling */
+.manage-users {
+    max-width: 1500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the form layout */
+.addProduct-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Delete Button Styling */
+.btn-delete{
+    padding: 1rem;
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+}
+
+/* Delete Button Hover Effect */
+.btn-delete:hover{
+    background-color: #af0404;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Header Alignment */
+th {
+    text-align: left;
+    padding: 10px;
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Cell Alignment */
+td {
+    padding: 10px;
+    vertical-align: middle; 
+}
+
+/* Actions Column Specific Alignment */
+th.actions, td:last-child {
+    text-align: center;
+}
+
+/* Buttons Spacing */
+td:last-child button {
+    margin: 0 5px;
+}
+
+/* Optional: Add table row separation */
+table tr {
+    border-bottom: 1px solid #ddd;
+}

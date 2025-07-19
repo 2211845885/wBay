@@ -1,0 +1,344 @@
+/* Products Header */
+.products-header {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.products-header h1 {
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Filters Sidebar */
+/*styling for the filters section*/
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*styling for the filter input fields*/
+.filters select,
+.filters input,
+.filters button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/*specfic styling for the category selecter*/
+.filters select {
+    min-width: 150px;
+    cursor: pointer;
+}
+
+/*styling for the search bar and its button*/
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-bar input {
+    min-width: 400px;
+    transition: all 0.3s ease; /*transition for the search input field*/
+}
+
+/*creates an outline when the search bar is clicked*/
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(35, 195, 158, 0.1);
+}
+
+.search-bar button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s; /*transiton for the search button*/
+}
+
+/*styling for the search bar button when its hoverd on*/
+.search-bar button:hover {
+    background-color: #1a9277;
+}
+
+/*specfic styling for the price filter area*/
+.price-filter {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.price-filter input {
+    width: 150px;
+    transition: all 0.3s ease; /*trsition for the price input fields*/
+}
+
+/*creates an outline when the price filter field is clicked*/
+.price-filter input:focus{
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(35, 195, 158, 0.1);
+}
+
+/*styling for the price button*/
+.price-filter button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s; /*transition for the price filter button*/
+}
+
+/*the button will change color when hoverd over*/
+.price-filter button:hover {
+    background-color: #1a9277;
+}
+
+/* Products Section */
+/*product page only*/
+.products-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Products Grid */
+/*both product and customerPage*/
+/*creates a grid to show the product cards*/
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+/* the product card class and everything inside it is inserted throught js code in the product.js file
+specfically the displayProducts() function*/
+.product-card {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+/*when hoverd over the product card goes up slightly*/
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/*style for the product image div*/
+.product-image {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+/*styling for the image inside each card*/
+.product-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/*This class styles the entire product detail which is inside
+every card injected by the js function in products.js*/
+.product-details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex: 1;
+}
+
+/*styling for the product category name*/
+.product-category {
+    font-size: 0.85rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/*styling for the product name*/
+.product-card h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #2d3436;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/*styling for the product price*/
+.product-card .price {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin: 0;
+}
+
+/*styling for the product description*/
+.product-card .description {
+    color: #636e72;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/*styling for the add to cart button/edit button*/
+.product-card .add-to-cart-btn, .edit-product {
+    margin-top: auto;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease; /*transition when the button is hoverd over*/
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.product-card .add-disabled{
+    margin-top:auto;
+    background-color: #666;
+    color:white;
+    border:none;
+    padding:1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: default;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+}
+
+/*when the button is hoverd over it slightly goes up*/
+.product-card .add-to-cart-btn:hover, .edit-product:hover {
+    background: #1a8870;
+    transform: translateY(-2px);
+}
+
+/*styling for the tiny icon for both the cart in the customer page and the wrench in the vendor page*/
+.product-card .add-to-cart-btn i, .edit-product i {
+    font-size: 1.1rem;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--dark-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*this entire noti section should work when we
+complete the add to cart functionaliy*/
+.notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.notification i {
+    font-size: 1.2rem;
+}
+
+.notification.success {
+    background: var(--primary-color);
+}
+
+.notification.info {
+    background: #3498db;
+}
+
+.notification.error {
+    background: #e74c3c;
+}
+
+/*also used by the noti section*/
+.fade-out {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+/* new Products Section */
+/*these 2 style code are only used in the customerPage.html file
+specfic styling for that page only*/
+.new-products {
+    padding: 4rem 2rem;
+}
+
+.new-products h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--dark-color);
+    font-size: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-bar,
+    .price-filter {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .price-filter input {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-range {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .price-range input {
+        width: 100%;
+    }
+}

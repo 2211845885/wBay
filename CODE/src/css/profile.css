@@ -1,0 +1,240 @@
+
+.profile-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+/* Profile Sidebar */
+.sidebar {
+    background-color: #f8f9fa;
+    margin-top: 1rem 0;
+    padding: 2rem;
+    border-right: 1px solid #eee;
+}
+
+.avatar {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+}
+
+.profile-container h2 {
+    margin: 0;
+    color: var(--dark-color);
+    text-align: center;
+}
+
+.profile-container p {
+    color: #666;
+    text-align: center;
+    margin-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+/* Profile Navigation */
+.profile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+    color: var(--dark-color);
+    transition: all 0.3s;
+}
+
+.nav-item:hover {
+    background-color: #eee;
+}
+
+.nav-item.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.nav-item i {
+    width: 20px;
+}
+
+/* Profile Content */
+.profile-content {
+    padding: 2rem;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h2 {
+    margin-bottom: 2rem;
+    color: var(--dark-color);
+}
+
+/* Forms */
+.profile-form {
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+}
+
+.save-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-btn:hover {
+    background-color: var(--primary-color-dark);
+}
+
+/* Orders List */
+.orders-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.order-item {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.order-products {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.btn-cancel {
+    padding: 1rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: var(--danger-color);
+}
+
+.status {
+    padding: 1rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.btn-status {
+    padding: 1rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-status span {
+    display: none;
+}
+
+.confirm {
+    background: var(--primary-color);
+}
+.confirm::after {
+    content: "Confirm";
+}
+
+.pending {
+    background: gray;
+}
+.pending::after {
+    content: "Pending";
+}
+
+.on_the_way {
+    background: rgb(243, 164, 18);
+}
+.on_the_way::after {
+    content: "On The Way";
+}
+
+.delivered {
+    background: rgb(54, 137, 214);
+}
+.delivered::after {
+    content: "Delivered";
+}
+
+.cancelled {
+    background: var(--danger-color);
+    text-decoration: line-through;
+}
+.cancelled::after {
+    content: "Cancelled";
+}

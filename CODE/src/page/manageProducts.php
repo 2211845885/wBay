@@ -1,0 +1,143 @@
+<?php
+session_start(); // start session
+
+include_once("../../serverhandle/userhandle.php");
+include_once("../../serverhandle/productListing.php");
+
+
+// Check if the user is not logged in
+if (!user::isLoggedIn()) {
+    // Redirect the user to the login page
+    header("location: login.php");
+    exit;
+}
+
+// Handle logout via GET request
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['action']) && $_GET['action'] == "logout") {
+    user::logout();
+    exit;
+}
+
+$row = prodlist::adminSearchProd("");
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $searchWord = $_POST["search"];
+    if(!empty($searchWord)){
+        $row = prodlist::adminSearchProd($searchWord);
+    } else {
+        $row = prodlist::adminListProducts(0, 'ASC');
+    }
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wbay - Your Online Shopping Destination</title>
+        <link rel="stylesheet" href="../css/globalStyle.css">
+        <link rel="stylesheet" href="../css/navbar.css">
+        <link rel="stylesheet" href="../css/products.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     
+    </head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../page/adminPage.php">Wbay</a>
+        </div>
+        <div class="nav-links">
+            <a href="../page/adminPage.php">Home</a>
+            <a href="../page/manageUsers.php">Manage Users</a>
+            <a href="../page/manageProducts.php" id="active">Manage Products</a>
+            <div class="user-menu" id="userMenu">
+                <button class="user-btn" id="userBtn">
+                    <i class="fas fa-user"></i>
+                </button>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="../page/adminProfile.php" id="profileBtn">Profile</a>
+                    <!-- Form for Logout -->
+                    <form action="manageProducts.php" method="GET">
+                    <button class="navbar-btn" type="submit" id="logoutBtn" value="logout" name="action">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="products-header">
+        <h1>Manage Products</h1>
+        <div class="filters">
+            <form action="manageProducts.php" method="post">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search products..." name="search">
+                    <button>
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <section class="products-section">
+        <div class="products-grid" id="products">
+            <!-- editProduct() function temporarly added manage products dev should use it later-->
+            <?php
+                if(!empty($row)){
+                    foreach($row as $prod){
+                        echo "
+                        <a href='adminProductReview.php?id={$prod['id']}'  class='product-card-link'>
+                        <div class='product-card' data-id='{$prod['id']}'>
+                            <div class='product-image'>
+                                <img src='{$prod['image_url']}' alt='{$prod['name']}'>
+                            </div>
+                            <div class='product-details'>
+                                <span class='product-category'>{$prod['category']}</span>
+                                <h4>ID: {$prod['id']}</h4>
+                                <h3>{$prod['name']}</h3>
+                                <p class='price'>\$ {$prod['price']}</p>
+                                <p class='description'>{$prod['description']}</p>
+                                <button value='{$prod['id']}' class='to-AdminEdit add-to-cart-btn'>
+                                <i class='fas fa-wrench'></i>
+                                    Edit Product
+                                </button>
+                            </div>
+                        </div>
+                        </a>";
+                    }
+                } else {
+                    echo "<p>no products to list</p>";
+                }
+            ?>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your one-stop shop for all your needs</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../page/manageProducts.php">Manage Products</a></li>
+                    <li><a href="../page/manageUsers.php">Manage Users</a></li>
+                    <li><a href="../page/adminProfile.php">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@wbay.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>EBay but we W</p>
+        </div>
+    </footer>
+
+    <script src="../js/ProfileDropDown.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/toEdit.js"></script>
+</body>
+</html>
